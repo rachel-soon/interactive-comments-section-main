@@ -27,8 +27,8 @@ jobs:
       # Create Vite app and install dependencies
       - name: Create Vite app and Install dependencies
         run: |
-          create-vite my-vite-app --template vue
-          cd my-vite-app
+          pnpm create vite@latest .
+          cd interactive-comments-section-main
           npm install
 
       # # Run tests (if applicable)
