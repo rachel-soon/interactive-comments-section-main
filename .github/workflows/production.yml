@@ -46,6 +46,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Debug - List current directory
+        run: ls -l
       - name: Deploy production to Netlify
         uses: South-Paw/action-netlify-deploy@v1.2.0
         with:
