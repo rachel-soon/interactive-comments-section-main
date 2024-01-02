@@ -27,7 +27,7 @@ jobs:
       # Create Vite app and install dependencies
       - name: Create Vite app and Install dependencies
         run: |
-          pnpm create vite@latest .
+          npm create vite@latest .
           cd interactive-comments-section-main
           npm install
           npm install vue-tsc
