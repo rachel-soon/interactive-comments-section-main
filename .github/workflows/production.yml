@@ -37,6 +37,10 @@ jobs:
       # Build the Vite app
       - name: Build Vite app
         run: npm run build
+      
+      # Print current directory contents for debugging
+      - name: Debug - List current directory
+        run: ls -l
 
   deploy:
     needs: build
@@ -48,5 +52,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
-          build-dir: "dist" # Adjust the build directory based on your Vite app configuration
+          build-dir: "../dist" # Adjust the build directory based on your Vite app configuration
           comment-on-commit: true
