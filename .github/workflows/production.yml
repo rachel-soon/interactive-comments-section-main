@@ -30,6 +30,7 @@ jobs:
           pnpm create vite@latest .
           cd interactive-comments-section-main
           npm install
+          npm install vue-tsc
 
       # # Run tests (if applicable)
       # - name: Run tests
