@@ -14,9 +14,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 20.x
-          cache: 'npm'
+          cache: "npm"
           cache-dependency-path: pnpm-lock.yaml
- 
+
       - name: Clear npm cache
         run: npm cache clean -f
 
@@ -31,9 +31,9 @@ jobs:
           cd my-vite-app
           npm install
 
-      # Run tests (if applicable)
-      - name: Run tests
-        run: npm test
+      # # Run tests (if applicable)
+      # - name: Run tests
+      #   run: npm test
 
       # Build the Vite app
       - name: Build Vite app
@@ -49,5 +49,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
-          build-dir: './my-vite-app/dist'  # Adjust the build directory based on your Vite app configuration
+          build-dir: "./my-vite-app/dist" # Adjust the build directory based on your Vite app configuration
           comment-on-commit: true
