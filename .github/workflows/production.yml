@@ -14,28 +14,27 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
-          cache: 'pnpm'
-          cache-dependency-path: pnpm-lock.yaml
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
 
       # Install Vite globally
       - name: Install Vite
         run: npm install -g create-vite@latest
 
-      # Create Vite app and install dependencies using pnpm
+      # Create Vite app and install dependencies
       - name: Create Vite app and Install dependencies
         run: |
           create-vite my-vite-app --template vue
           cd my-vite-app
-          npm install -g pnpm
-          pnpm install
+          npm install
 
       # Run tests (if applicable)
       - name: Run tests
-        run: pnpm test
+        run: npm test
 
       # Build the Vite app
       - name: Build Vite app
-        run: pnpm run build
+        run: npm run build
 
   deploy:
     needs: build
