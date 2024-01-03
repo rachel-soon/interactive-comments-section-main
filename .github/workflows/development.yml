@@ -1,8 +1,8 @@
-name: "production pipeline"
+name: "development pipeline"
 
 on:
   push:
-    branches: [main]
+    branches: [dev]
     
 jobs:
   build:
