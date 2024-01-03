@@ -17,30 +17,15 @@ jobs:
           cache: "npm"
           cache-dependency-path: pnpm-lock.yaml
 
-      - name: Clear npm cache
-        run: npm cache clean -f
-
-      # Install Vite globally
-      - name: Install Vite
-        run: npm install -g create-vite@latest
-
-      # Create Vite app and install dependencies
-      - name: Create Vite app and Install dependencies
+      # Install dependencies
+      - name: Install dependencies
         run: |
           npm install
           npm install vue-tsc
 
-      # # Run tests (if applicable)
-      # - name: Run tests
-      #   run: npm test
-
       # Build the Vite app
       - name: Build Vite app
         run: npm run build
-      
-      # Print current directory contents for debugging
-      - name: Debug - List current directory
-        run: ls -l
 
   deploy:
     needs: build
