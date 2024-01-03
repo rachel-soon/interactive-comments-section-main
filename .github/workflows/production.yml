@@ -5,15 +5,15 @@ on:
     branches:
       - main
 
-# https://medium.com/@libint20/simple-ci-cd-setup-for-your-netlify-website-using-github-actions-1fda953f99f5
-jobs: 
-  build: 
+jobs:
+  build:
     runs-on: ubuntu-latest
     steps:
-      — uses: actions/checkout@v3 
+      — uses: actions/checkout@v3
       — name: "Deployed site"
         run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK }}
 
+# https://medium.com/@libint20/simple-ci-cd-setup-for-your-netlify-website-using-github-actions-1fda953f99f5
 
 
 # jobs:
